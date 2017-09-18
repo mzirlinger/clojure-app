@@ -10,12 +10,16 @@
                                org.clojure/clojurescript]]  ; fixed length queue implementation, used in log buffering
                  [amalloy/ring-gzip-middleware "0.1.3"]     ; Ring middleware to GZIP responses if client can handle it
                  [compojure "1.1.8"]                        ; HTTP Routing library built on Ring
+                 [honeysql "0.9.1"]                         ; Transform Clojure data structures to SQL
                  [log4j/log4j "1.2.17"]                     ; logging framework
                  [medley "1.0.0"]                           ; lightweight lib of useful functions
+                 [migratus/migratus "1.0.0"]                ; database migrations
                  [postgresql "9.3-1102.jdbc41"]             ; Postgres driver
                  [ring/ring-core "1.6.0"]
                  [ring/ring-jetty-adapter "1.6.0"]          ; Ring adapter using Jetty webserver (used to run a Ring server for unit tests)
                  [ring/ring-json "0.4.0"]                   ; Ring middleware for reading/writing JSON automatically]
+                 [toucan "1.1.0"                            ; Model layer, hydration, and DB utilities
+                  :exclusions [honeysql]]
                  ]
   :plugins [[lein-environ "1.1.0"]
             [lein-ring "0.11.0"

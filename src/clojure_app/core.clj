@@ -77,7 +77,7 @@
     ;; launch embedded webserver async
     (start-jetty!)
     ;; Ok, now block forever while Jetty does its thing
-    (when (config/config-bool :mb-jetty-join)
+    (when (config/config-bool :app-jetty-join)
       (.join ^Server @jetty-instance))
     (catch Throwable e
       (.printStackTrace e)
